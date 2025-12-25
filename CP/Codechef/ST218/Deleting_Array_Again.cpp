@@ -41,30 +41,22 @@ using ll = long long;
 #define PI 3.141592653589793238462643383279502884
 #define inf 0x3f3f3f3f
 const int MOD = 1e9 + 7;
-const int NN= 1e5 + 5;
+const int NN = 1e5 + 5;
 
 void Solve()
-{ 
-    int n;cin>>n;
-    vector<int> a(n+ 1), c(n + 1);
-    for (int i = 1; i <= n ; i++) cin >> a[i];
-    for (int i = 1; i <=  n; i++) cin >> c[i];
-
-    
-    vector<vector<int>> ans(n+ 2, vector<int>(n + 2, 0));
-
-    for (int i = 1; i <= n; i++) { 
-        for (int j = 1; j <= n - i + 1; j++) {
-            int jj = j + i - 1;
-            ans[j][jj]=INT_MAX;
-            for (int k = j; k <= jj; k++) {
-            
-                int curr= ans[j][k - 1] + ans[k + 1][jj] + a[k] * c[j];
-                ans[j][jj] = min(ans[j][jj], curr);
-            }
-        }
-    }
-    cout<< ans[1][n]<<endl;
+{
+  int n;
+  cin >> n;
+  vector<int> a(n), c(n);
+  scan(a);
+  scan(c);
+  vector<int> p(n, c[0]);
+  for (int i = 1; i < n; i++)
+    p[i] = min(p[i - 1], c[i]);
+  int ans = 0;
+  for (int i = 0; i < n; i++)
+    ans += a[i] * p[i];
+  cout << ans << endl;
 }
 
 int32_t main()

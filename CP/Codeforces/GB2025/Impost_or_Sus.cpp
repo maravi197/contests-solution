@@ -54,25 +54,6 @@ void Solve()
         return;
     }
 
-    // vector<int> uu;
-    // int cnt = 0;
-    // vi(i, s.size())
-    // {
-    //     if (s[i] == 'u')
-    //         cnt++;
-    //     else
-    //     {
-    //         uu.pb(cnt);
-    //         cnt = 0;
-    //     }
-    // }
-    // if (cnt)
-    //     uu.pb(cnt);
-    // int ans = 0;
-    // vi(i, uu.size())
-    // {
-    //     ans += cnt / 2;
-    // }
     int ans = 0;
     int cnt = 0;
     if (s[0] == 'u')

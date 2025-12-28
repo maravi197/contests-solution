@@ -1,0 +1,14 @@
+# VS Code settings
+.vscode
+
+# build / executables
+build/
+*.exe
+*.out
+
+# temp files
+*.log
+*.tmp
+*.cph
+*.o
+a.out
